@@ -1,4 +1,4 @@
-package com.demo.tareas;
+package com.demo.tareas.notification;
 
 public interface NotificationInterface {
     String tipo();

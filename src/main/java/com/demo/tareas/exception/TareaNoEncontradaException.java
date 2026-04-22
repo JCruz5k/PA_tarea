@@ -1,4 +1,4 @@
-package com.demo.tareas;
+package com.demo.tareas.exception;
 
 public class TareaNoEncontradaException extends RuntimeException {
     public TareaNoEncontradaException(Long id) {

@@ -1,9 +1,13 @@
-package com.demo.tareas;
+package com.demo.tareas.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import com.demo.tareas.exception.ApiKeyInvalidaException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
@@ -28,6 +32,13 @@ public class GlobalExceptionHandler {
             TipoReporteNoSoportadoException ex) {
         return ResponseEntity.status(404)
                 .body(ErrorResponse.of(404, ex.getMessage()));
+    }
+
+    @ExceptionHandler(ApiKeyInvalidaException.class)
+    public ResponseEntity<ErrorResponse> apiKeyInvalida(
+            ApiKeyInvalidaException ex) {
+        return ResponseEntity.status(401)
+                .body(ErrorResponse.of(401, ex.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)

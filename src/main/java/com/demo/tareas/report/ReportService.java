@@ -1,5 +1,8 @@
-package com.demo.tareas;
+package com.demo.tareas.report;
 
+import com.demo.tareas.exception.TipoEnvioNoSoportadoException;
+import com.demo.tareas.exception.TipoReporteNoSoportadoException;
+import com.demo.tareas.notification.NotificationInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +24,7 @@ public class ReportService {
                 .collect(Collectors.toMap(NotificationInterface::tipo, s -> s));
     }
 
-    public void generarYEnviar(Report r, String destino,
+    public void generarYEnviar(ReportModel r, String destino,
                                String tipoReporte,
                                String tipoEnvio) {
         ReportInterface generator = Optional

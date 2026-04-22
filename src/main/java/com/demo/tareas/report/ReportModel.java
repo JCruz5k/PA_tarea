@@ -1,13 +1,13 @@
-package com.demo.tareas;
+package com.demo.tareas.report;
 
 import java.time.LocalDate;
 
-public class Report {
+public class ReportModel {
     private String titulo;
     private String contenido;
     private LocalDate fecha;
 
-    public Report(String titulo, String contenido) {
+    public ReportModel(String titulo, String contenido) {
         this.titulo = titulo;
         this.contenido = contenido;
         this.fecha = fecha;

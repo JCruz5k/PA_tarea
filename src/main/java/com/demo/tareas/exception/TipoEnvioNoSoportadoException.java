@@ -1,4 +1,4 @@
-package com.demo.tareas;
+package com.demo.tareas.exception;
 
 public class TipoEnvioNoSoportadoException extends RuntimeException {
     public TipoEnvioNoSoportadoException(String tipoEnvio) {

@@ -1,14 +1,15 @@
-package com.demo.tareas;
+package com.demo.tareas.ai;
 
 import dev.langchain4j.service.UserMessage;
+import dev.langchain4j.service.V;
 import dev.langchain4j.service.spring.AiService;
 
 @AiService
-public interface HelpAiService {
+public interface HelpAiInterface {
     @UserMessage (value = """
             Actúa como un programador experto con muchos años de experiencia en desarrollo de software, pero con un estilo divertido, irónico y cercano. Genera un saludo creativo para una clase universitaria de Programación Avanzada.
             
-            El saludo debe:
+            El saludo debe contener: 'Bienvenido a la {{plataform}}' y debe:
             
             Ser motivador pero con humor inteligente
             Incluir alguna analogía divertida con la vida de un programador.
@@ -21,5 +22,5 @@ public interface HelpAiService {
             Puedes incluir una pequeña broma sobre errores comunes o “cosas que solo los programadores entienden”.
             """)
 
-    String generateGreating();
+    String generateGreating(@V("plataform") String plataform);
 }

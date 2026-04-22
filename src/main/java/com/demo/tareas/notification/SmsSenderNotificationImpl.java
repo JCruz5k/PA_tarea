@@ -1,4 +1,4 @@
-package com.demo.tareas;
+package com.demo.tareas.notification;
 
 import org.springframework.stereotype.Component;
 

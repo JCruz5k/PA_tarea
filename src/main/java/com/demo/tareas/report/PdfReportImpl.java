@@ -1,4 +1,4 @@
-package com.demo.tareas;
+package com.demo.tareas.report;
 
 import org.springframework.stereotype.Component;
 

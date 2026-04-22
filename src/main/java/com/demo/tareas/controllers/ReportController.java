@@ -1,11 +1,12 @@
-package com.demo.tareas;
+package com.demo.tareas.controllers;
 
+import com.demo.tareas.report.ReportModel;
+import com.demo.tareas.report.ReportService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -22,7 +23,7 @@ public class ReportController {
         @RequestParam String tipoEnvio,
         @RequestParam String destino) {
 
-            Report r = new Report("Demo", "Contenido");
+            ReportModel r = new ReportModel("Demo", "Contenido");
 
             service.generarYEnviar(r, destino, tipoReporte, tipoEnvio);
 
