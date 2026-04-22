@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(apiKeyInterceptor)
-                .addPathPatterns("/reportes/**")   // ajusta según tus rutas reales
-                .excludePathPatterns("/hello/**"); // deja libre el HelloController para pruebas
+                .addPathPatterns("/reporte","/reporte/**")
+                .excludePathPatterns("/hello/**"); 
     }
 }
